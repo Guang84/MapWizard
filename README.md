@@ -82,7 +82,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 ![V1 Screenshot](https://github.com/user-attachments/assets/9e8afc2a-b8fe-4164-92e3-72082adb6576)
 
 #### **V2**
-![V2 Screenshot](https://via.placeholder.com/800x400.png?text=V2+Screenshot)
+[Profile](https://github.com/Guang84)
 
 ---
 
