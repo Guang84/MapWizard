@@ -1,7 +1,6 @@
-# MapWizard
-MapWizard is an advanced, user-friendly web application for measuring distances and areas on interactive maps.
+# **MapWizard**
 
-**MapMeasurePro** is an advanced, user-friendly web application for measuring distances and areas on interactive maps. Built with **Google Maps API**, this tool allows users to:
+**MapWizard** is an advanced, user-friendly web application for measuring distances and areas on interactive maps. Built with **Google Maps API**, this tool was developed as a utility for **GDENT BSNL Broadband Service** to assist in network planning, distance measurement, and area calculations. It allows users to:
 
 - 📍 **Pin Locations**: Add custom markers with names, addresses, and landline numbers.
 - 📏 **Measure Distances**: Calculate distances between multiple points with real-time updates.
@@ -14,10 +13,12 @@ MapWizard is an advanced, user-friendly web application for measuring distances 
 
 Whether you're a developer, geospatial analyst, or just someone who loves maps, **MapWizard** is the perfect tool for all your distance and area measurement needs. Try it out and explore the world with precision!
 
-## **WEB**
+---
 
-- **Version 1 (V1)**: [MapMeasurePro V1](https://guang84.github.io/MapWizard/AMM_V1/index.html)
-- **Version 2 (V2)**: [MapMeasurePro V2](https://guang84.github.io/MapWizard/AMM_V2/index.html)
+## **Live Demos**
+
+- **Version 1 (V1)**: [MapWizard V1](https://guang84.github.io/MapWizard/AMM_V1/index.html)
+- **Version 2 (V2)**: [MapWizard V2](https://guang84.github.io/MapWizard/AMM_V2/index.html)
 
 ---
 
@@ -29,11 +30,15 @@ Whether you're a developer, geospatial analyst, or just someone who loves maps, 
 - **Responsive Design**: Works seamlessly on desktop and mobile devices.
 - **Open Source**: Fully customizable and free to use.
 
+---
+
 ## **Technologies Used**:
 - **Frontend**: HTML, CSS, JavaScript
 - **Maps API**: Google Maps API
 - **Storage**: LocalStorage for saving pinned locations
 - **Tools**: Google Places Autocomplete, Google Geometry Library
+
+---
 
 ## **How to Use**:
 1. **Add Points**: Click on the map or enter coordinates manually to add measurement points.
@@ -42,18 +47,22 @@ Whether you're a developer, geospatial analyst, or just someone who loves maps, 
 4. **Save Data**: Export your measurements and pinned locations as a JSON file.
 5. **Load Data**: Import previously saved data to continue your work.
 
-## **Why Choose MapMeasurePro?**
+---
+
+## **Why Choose MapWizard?**
 - **Simple and Intuitive**: Easy-to-use interface for all skill levels.
 - **Powerful Features**: From distance measurement to area calculation, it has it all.
 - **Customizable**: Tailor the map style and functionality to your needs.
 - **Open Source**: Free to use, modify, and share.
 
+---
 
 ## **Get Started**:
 Clone the repository and open `index.html` in your browser to start measuring!
 
 ```bash
-[Guang84/Mapwizard](https://github.com/Guang84/MapWizard.git)cd MapMeasurePro
+git clone https://github.com/Guang84/MapWizard.git
+cd MapWizard
 ```
 
 ---
@@ -69,10 +78,15 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 ---
 
 ### **Screenshots**
-![image](https://github.com/user-attachments/assets/9e8afc2a-b8fe-4164-92e3-72082adb6576)
-[Link](https://guang84.github.io/MapWizard/AMM_V1/index.html)
+#### **V1**
+![V1 Screenshot](https://github.com/user-attachments/assets/9e8afc2a-b8fe-4164-92e3-72082adb6576)
 
+#### **V2**
+![V2 Screenshot](https://via.placeholder.com/800x400.png?text=V2+Screenshot)
 
+---
+
+### **Changelog**
 #### **V1**
 - Initial release with basic distance measurement and pin functionality.
 
@@ -81,3 +95,8 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 - Improved UI/UX with customizable map styles.
 - Added export/import functionality.
 - Introduced undo/redo for measurement points.
+
+---
+
+### **About GDENT BSNL Broadband Service**
+This tool was developed as part of the **GDENT BSNL Broadband Service** initiative to assist in network planning, distance measurement, and area calculations for broadband infrastructure. It provides an efficient way to measure distances between network nodes and calculate coverage areas, making it an essential tool for network engineers and planners.
