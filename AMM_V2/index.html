@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Map Measurement Tool</title>
+    <link rel="icon" href="https://i.postimg.cc/MTzjJM7M/GH.png" type="image/x-icon">
+    <link rel="stylesheet" href="static/static.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAeNB4RWMp0atS5CSqv1GbKUkBldE6TROM&libraries=drawing,places,geometry&callback=initMap"></script>
+
+</head>
+<body>
+    <div id="map"></div>
+    <div id="sidebar">
+        <div class="info-content">
+            <h2>Map Controls</h2>
+            <div id="mode-controls">
+                <button id="pin-mode" class="mode-btn active" title="Add pins to the map">📍 Pin Mode</button>
+                <button id="measure-mode" class="mode-btn" title="Measure distances between points">📏 Measure Mode</button>
+                <button id="area-mode" class="mode-btn" title="Measure area of polygons">📐 Area Mode</button>
+            </div>
+            <div class="map-style-controls">
+                <button id="roadmap-style" class="style-btn active" title="Default map style">🗺️ Roadmap</button>
+                <button id="satellite-style" class="style-btn" title="Satellite view">🛰️ Satellite</button>
+                <button id="dark-style" class="style-btn" title="Dark mode">🌙 Dark</button>
+            </div>
+        </div>
+
+        <div class="info-content">
+            <h3>Measurement Tools</h3>
+            <div class="form-group">
+                <input type="number" step="any" id="measure-lat" placeholder="Latitude (-90 to 90)">
+                <input type="number" step="any" id="measure-lng" placeholder="Longitude (-180 to 180)">
+                <div id="coord-error" class="error-message"></div>
+                <button onclick="mapManager.addMeasurePointFromInput()" title="Add a point manually">Add Point</button>
+                <button onclick="mapManager.undoLastPoint()" title="Undo the last point">↩️ Undo</button>
+                <button onclick="mapManager.redoLastPoint()" title="Redo the last undone point">↪️ Redo</button>
+            </div>
+            <div id="measure-results">
+                <h4>Measurement Results</h4>
+                <div id="segments" style="max-height: 200px; overflow-y: auto;"></div>
+                <p><strong>Total Distance:</strong> <span id="total-distance">0</span> meters</p>
+                <p><strong>Total Area:</strong> <span id="total-area">0</span> m²</p>
+                <button onclick="mapManager.clearMeasurements()" class="secondary" title="Clear all measurements">Clear Measurements</button>
+            </div>
+        </div>
+
+        <div class="info-content">
+            <h3>Saved Locations</h3>
+            <button onclick="mapManager.loadSavedLocations()" title="Load saved locations">🔄 Load Locations</button>
+            <button onclick="mapManager.clearMap()" class="danger" title="Clear all pins and measurements">🗑️ Clear Map</button>
+            <button onclick="mapManager.exportData()" title="Export data as JSON">📤 Export Data</button>
+            <input type="file" id="import-file" accept=".json" style="display: none;">
+            <button onclick="document.getElementById('import-file').click()" title="Import data from JSON">📥 Import Data</button>
+            <div id="pin-info"></div>
+        </div>
+
+        <div class="info-content">
+            <h3>Search Location</h3>
+            <input type="text" id="search-input" placeholder="Search for a location...">
+            <button onclick="mapManager.searchLocation()" title="Search for a location">Search</button>
+        </div>
+
+        <div class="info-content">
+            <h3>Geolocation</h3>
+            <button onclick="mapManager.centerOnUserLocation()" title="Center map on your location">📍 My Location</button>
+        </div>
+    </div>
+
+    <div id="pin-modal" class="modal">
+        <h3>Create New Marker</h3>
+        <form onsubmit="event.preventDefault(); mapManager.saveCustomPin()">
+            <div class="form-group">
+                <label>Name:</label>
+                <input type="text" id="pin-name" required>
+            </div>
+            <div class="form-group">
+                <label>Address:</label>
+                <input type="text" id="pin-address">
+            </div>
+            <div class="form-group">
+                <label>Landline:</label>
+                <input type="tel" id="pin-landline">
+            </div>
+            <div class="form-group coordinates-display">
+                <span id="modal-lat"></span>, <span id="modal-lng"></span>
+            </div>
+            <div style="text-align: right;">
+                <button type="button" onclick="mapManager.closeModal()">Cancel</button>
+                <button type="submit">Save Marker</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Load Google Maps API -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAeNB4RWMp0atS5CSqv1GbKUkBldE6TROM&libraries=drawing,places,geometry&callback=initMap" async defer></script>
+    <script src="static/script.js"></script>
+</body>
+</html>
