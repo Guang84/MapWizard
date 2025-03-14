@@ -70,6 +70,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ### **Screenshots**
 ![image](https://github.com/user-attachments/assets/9e8afc2a-b8fe-4164-92e3-72082adb6576)
+![image](https://guang84.github.io/MapWizard/AMM_V1/index.html)
 
 
 #### **V1**
